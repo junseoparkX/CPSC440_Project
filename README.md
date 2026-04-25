@@ -105,10 +105,10 @@ A binary mask over the baseline space (`1` = included, `0` = excluded).
 `RandomForestClassifier` (scikit-learn).
 
 **Fitness evaluation.**  
-We evaluate each chromosome using **Stratified 5-fold CV** on the training set and compute **mean CV AUC** as the base score. In size-penalized runs, we add a penalty to encourage subsets near a target size `TARGET_K`.
+We evaluate each chromosome using **Stratified 5-fold CV** on the training set and compute **mean CV ACC** as the base score. In size-penalized runs, we add a penalty to encourage subsets near a target size `TARGET_K`.
 
 Conceptually:
-fitness = mean_CV_AUC − λ_k · |k − TARGET_K|
+fitness = mean_CV_ACC − λ_k · |k − TARGET_K|
 where `k` is the number of selected features, `TARGET_K` is the desired subset size, and `λ_k` controls penalty strength.
 
 ---
